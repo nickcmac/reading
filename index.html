@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPUB Viewer</title>
+    <!-- Include EPUB.js library -->
+    <script src="https://unpkg.com/epubjs@0.3.77/dist/epub.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #viewer {
+            width: 100%;
+            height: 600px; /* Set the desired height for your EPUB viewer */
+        }
+    </style>
+</head>
+<body>
+    <h1>EPUB Viewer</h1>
+    <div id="viewer"></div>
+
+    <script>
+        // Initialize the EPUB reader
+        var book = ePub("SGB.epub", {
+            restore: true, // Allows for last read position restoration
+            width: "100%",
+            height: "100%",
+        });
+    
+        // Render the book in the "viewer" div
+        book.renderTo("viewer", {
+            width: "100%",
+            height: "100%",
+        });
+    </script>
+    >
+</body>
+</html>
